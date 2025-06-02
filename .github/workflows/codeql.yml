@@ -1,0 +1,47 @@
+name: "🔐 CodeQL MechMind Edition"
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '41 21 * * 0'
+
+jobs:
+  analyze:
+    name: "🦀 Análisis Profundo (${{ matrix.language }})"
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+
+    strategy:
+      matrix:
+        language: ['c-cpp', 'python', 'javascript-typescript']
+        include:
+          - language: c-cpp
+            extra: "🛡️ FFI & Rust Audit"
+          - language: python
+            extra: "🐍 AI/ML Security"
+          - language: javascript-typescript
+            extra: "🌐 Web Exploits"
+
+    steps:
+      - name: "🤖 Checkout (MechMind Style)"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: "🚀 Initialize CodeQL"
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          queries: +${{ github.workspace }}/.github/codeql/custom.qls
+          config-file: .github/codeql/codeql-config.yml
+
+      - name: "📊 Analyze & Upload"
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/mechmind:${{ matrix.language }}"

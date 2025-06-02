@@ -1,0 +1,20 @@
+name: 🚀 MechMind Profile Power-Up
+permissions:
+  contents: read
+  on:
+  schedule:
+    - cron: "0 12 * * *"  # Daily at noon UTC (¡hora del café!)
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:       # Trigger manual
+
+jobs:
+  supercharge-profile:
+    name: ⚡ Actualización Dinámica
+    runs-on: ubuntu-latest
+    steps:
+      # Paso 1: Checkout mágico
+      - name: 🛸 Clonar Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Para stats de commits

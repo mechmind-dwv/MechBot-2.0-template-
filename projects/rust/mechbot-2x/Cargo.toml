@@ -1,0 +1,8 @@
+[package]
+name = "mechbot-2x"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Añade tus dependencias reales aquí
+ros2-rust = { git = "https://github.com/ros2-rust/ros2-rust" }

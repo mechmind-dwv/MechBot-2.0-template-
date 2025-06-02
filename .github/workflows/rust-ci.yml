@@ -1,0 +1,19 @@
+name: Rust CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          override: true
+      
+      - name: Build MechBot-2X
+        working-directory: projects/rust/mechbot-2x
+        run: |
+          cargo check --all-targets
+          cargo test -- --nocapture
