@@ -1,4 +1,3 @@
- # 📦 ECOSISTEMA DOCKER (opcional)
   - package-ecosystem: "docker"
     directory: "/projects/mechbot-2x/deploy"
     schedule:
