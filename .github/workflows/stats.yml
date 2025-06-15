@@ -1,3 +1,5 @@
+### 🔄 **Auto-Actualización con GitHub Actions**
+```yaml
 name: Update Stats
 on:
   schedule:
@@ -6,8 +8,6 @@ on:
 
 jobs:
   update:
-    permissions:
-      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
