@@ -1,5 +1,3 @@
-### 🔄 **Auto-Actualización con GitHub Actions**
-```yaml
 name: Update Stats
 on:
   schedule:
