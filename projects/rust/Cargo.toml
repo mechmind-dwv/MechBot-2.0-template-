@@ -1,7 +1,12 @@
-[workspace]
-members = [
-    "mechbot-2x",
-    "atomic-rs", 
-    "oxide-security"
-]
-resolver = "2"
+[package]
+name = "mechbot-2x"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ros2-rust = { git = "https://github.com/ros2-rust/ros2-rust" }
+
+# Define a binary target
+[[bin]]
+name = "mechbot-2x"
+path = "src/main.rs"
