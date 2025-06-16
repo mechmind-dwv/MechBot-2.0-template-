@@ -15,7 +15,7 @@ Si no se actualiza:
 
 ¿Quieres que hagamos una **versión interactiva** con filtros por lenguajes? ¡O incluso integrar tus stats de **WakaTime**! 😏  
 
-```rust
+
 // ¡Tu perfil ahora es imparable!
 fn main() {
     println!("🌟 Stats actualizados con éxito!");
