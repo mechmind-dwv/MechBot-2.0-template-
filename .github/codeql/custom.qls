@@ -1,6 +1,6 @@
 - import: codeql-suites/security-extended.qls
-   - queries: ./custom-queries/rust-unsafe-audit.ql
+- queries: ./custom-queries/rust-unsafe-audit.ql
   
 **MechMind Reports**: 
-   - Binary hashes in the summary
-   - Special categorization `/mechmind
+- Binary hashes in the summary
+- Special categorization `/mechmind
