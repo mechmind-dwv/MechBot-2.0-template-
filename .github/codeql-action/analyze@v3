@@ -2,8 +2,7 @@
         usos : github/codeql-action/analyze@v3
 
        jobs:
-        my-job:
-     b permissions:
+  permissions:
         contents: read
       pull-requests: write
         con :
